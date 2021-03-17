@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: index-deployment
+  labels:
+    app: index 
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: index
+  template:
+    metadata:
+      labels:
+        app: index
+    spec:
+      containers:
+      - name: index
+        image: docker.io/kangel/test:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8805

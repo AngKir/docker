@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  indexservice2:
+    image: ypoth/indexservice:latest 
+    ports:
+      - "8805:8805"
+

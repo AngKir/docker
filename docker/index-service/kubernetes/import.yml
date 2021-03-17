@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: ImageStream
+metadata:
+  name: index-service
+  tags:
+  - from:
+      kind: DockerImage
+      name:  172.30.1.1:5000/artifact-demo/index
+    name: mytag
+    importPolicy:
+      insecure: true 
+    referencePolicy:
+      type: Local
